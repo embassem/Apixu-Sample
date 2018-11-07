@@ -10,7 +10,6 @@
 		18D2BFCA219353B400926AB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2BFC9219353B400926AB0 /* AppDelegate.swift */; };
 		18D2BFCF219353B400926AB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2BFCD219353B400926AB0 /* Main.storyboard */; };
 		18D2BFD1219353B500926AB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D2BFD0219353B500926AB0 /* Assets.xcassets */; };
-		18D2BFD4219353B500926AB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2BFD2219353B500926AB0 /* LaunchScreen.storyboard */; };
 		18D2BFF42193568A00926AB0 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2BFDE2193568A00926AB0 /* ServerError.swift */; };
 		18D2BFF52193568A00926AB0 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2BFDF2193568A00926AB0 /* BaseModel.swift */; };
 		18D2BFF62193568A00926AB0 /* GenaricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2BFE02193568A00926AB0 /* GenaricModel.swift */; };
@@ -39,6 +38,7 @@
 		18D2C01C21935A2200926AB0 /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2C01421935A2200926AB0 /* Current.swift */; };
 		18D2C01D21935A2200926AB0 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2C01521935A2200926AB0 /* Condition.swift */; };
 		18D2C01E21935A2200926AB0 /* ApixuBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2C01621935A2200926AB0 /* ApixuBase.swift */; };
+		18D2C02021935F0B00926AB0 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2C01F21935F0B00926AB0 /* LocationService.swift */; };
 		96AE57C485AC57A821CBFDA0 /* Pods_Apixu_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D41C55D54A5741555ADD61 /* Pods_Apixu_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +47,6 @@
 		18D2BFC9219353B400926AB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D2BFCE219353B400926AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18D2BFD0219353B500926AB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		18D2BFD3219353B500926AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D2BFD5219353B500926AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D2BFDE2193568A00926AB0 /* ServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		18D2BFDF2193568A00926AB0 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		18D2C01421935A2200926AB0 /* Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 		18D2C01521935A2200926AB0 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		18D2C01621935A2200926AB0 /* ApixuBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApixuBase.swift; sourceTree = "<group>"; };
+		18D2C01F21935F0B00926AB0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		26B7EC2C86739C4F77944F89 /* Pods-Apixu-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apixu-Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apixu-Sample/Pods-Apixu-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		64D41C55D54A5741555ADD61 /* Pods_Apixu_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apixu_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A38A5959EB7EE07869134973 /* Pods-Apixu-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apixu-Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Apixu-Sample/Pods-Apixu-Sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +227,7 @@
 		18D2C0092193578600926AB0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				18D2C01F21935F0B00926AB0 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				18D2BFCD219353B400926AB0 /* Main.storyboard */,
-				18D2BFD2219353B500926AB0 /* LaunchScreen.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -326,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D2BFF72193568A00926AB0 /* NSURLErrorDomain.md in Resources */,
-				18D2BFD4219353B500926AB0 /* LaunchScreen.storyboard in Resources */,
 				18D2BFD1219353B500926AB0 /* Assets.xcassets in Resources */,
 				18D2BFFB2193568A00926AB0 /* URLErrors.strings in Resources */,
 				18D2BFCF219353B400926AB0 /* Main.storyboard in Resources */,
@@ -413,6 +412,7 @@
 				18D2BFCA219353B400926AB0 /* AppDelegate.swift in Sources */,
 				18D2BFF52193568A00926AB0 /* BaseModel.swift in Sources */,
 				18D2C0002193568A00926AB0 /* NoError.swift in Sources */,
+				18D2C02021935F0B00926AB0 /* LocationService.swift in Sources */,
 				18D2C01A21935A2200926AB0 /* Astro.swift in Sources */,
 				18D2C01821935A2200926AB0 /* Day.swift in Sources */,
 				18D2C01C21935A2200926AB0 /* Current.swift in Sources */,
@@ -438,14 +438,6 @@
 				18D2BFCE219353B400926AB0 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		18D2BFD2219353B500926AB0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18D2BFD3219353B500926AB0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -572,6 +564,7 @@
 			baseConfigurationReference = 26B7EC2C86739C4F77944F89 /* Pods-Apixu-Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HW52YW266;
 				INFOPLIST_FILE = "Apixu-Sample/Info.plist";
@@ -591,6 +584,7 @@
 			baseConfigurationReference = A38A5959EB7EE07869134973 /* Pods-Apixu-Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HW52YW266;
 				INFOPLIST_FILE = "Apixu-Sample/Info.plist";
