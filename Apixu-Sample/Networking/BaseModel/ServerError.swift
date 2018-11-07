@@ -72,10 +72,10 @@ extension ErrorModel {
     public struct  CommonErrors {
 
         public static let noInternet = ErrorModel.customizeError(error: NSError(domain: "com.antame", code: NSURLErrorNotConnectedToInternet, userInfo: nil))
-        public static let  getData  =  ErrorModel(message: NSLocalizedString("error_get_data", tableName: "URLErrors", comment: "NSURLErrorTimedOut Message"), field: nil, code: 0)
+        public static let  getData = ErrorModel(message: NSLocalizedString("error_get_data", tableName: "URLErrors", comment: "NSURLErrorTimedOut Message"), field: nil, code: 0)
 
-        public static let  unknownError  =  ErrorModel(message: NSLocalizedString("error_unknown", tableName: "URLErrors", comment: "unknown error"), field: nil, code: 0)
-        public static let  invalidShareData  =  ErrorModel(message: NSLocalizedString("error_share_data", tableName: "Errors", comment: "share  data is not valid"), field: nil, code: 0)
+        public static let  unknownError = ErrorModel(message: NSLocalizedString("error_unknown", tableName: "URLErrors", comment: "unknown error"), field: nil, code: 0)
+        public static let  invalidShareData = ErrorModel(message: NSLocalizedString("error_share_data", tableName: "Errors", comment: "share  data is not valid"), field: nil, code: 0)
 
     }
 }

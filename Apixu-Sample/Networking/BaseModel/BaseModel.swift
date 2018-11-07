@@ -14,8 +14,8 @@ open class BaseModel: NSObject, NSCoding, Mappable {
     public var code: String?
     public var status: String?
     public var message: String?
-    public var isSuccessful:Bool?
-    public var count:Int?
+    public var isSuccessful: Bool?
+    public var count: Int?
     class func newInstance(map: Map) -> Mappable? {
         return BaseModel()
     }

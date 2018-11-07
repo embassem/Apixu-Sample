@@ -27,7 +27,12 @@ import enum Result.Result
 
 public typealias NetworkResponseResult = NetworkResult<Mappable>
 public typealias StatusCode = Int
-public typealias NetworkServiceResponse<T: Mappable> = (_ result: NetworkResponseResult, _ statusCode: StatusCode, _ json: JSON?, _ response: Moya.Response?, _ type: NetworkResponseType) -> Void
+public typealias NetworkServiceResponse<T: Mappable> = (
+    _ result: NetworkResponseResult,
+    _ statusCode: StatusCode,
+    _ json: JSON?,
+    _ response: Moya.Response?,
+    _ type: NetworkResponseType) -> Void
 
 //============================================================================
 //============================================================================
@@ -42,7 +47,7 @@ public enum NetworkResponseType {
 
 open class NetworkService: NSObject {
 
-    open static var shared: NetworkService = {
+    public static var shared: NetworkService = {
         let instance = NetworkService()
         return instance
     }()
@@ -63,7 +68,11 @@ open class NetworkService: NSObject {
 
     }
 
-    internal func request<E: TargetType, T: Mappable>(endPoint: E, modelType: T.Type, responseType: NetworkResponseType = .object, delegate: @escaping NetworkServiceResponse<T>) {
+    internal func request<E: TargetType, T: Mappable>(
+        endPoint: E,
+        modelType: T.Type,
+        responseType: NetworkResponseType = .object,
+        delegate: @escaping NetworkServiceResponse<T>) {
 
         if let provider = self.mainProvider {
             provider.request(MultiTarget(endPoint)) { moyaResult in
@@ -72,16 +81,23 @@ open class NetworkService: NSObject {
             }
 
         } else {
-            let error = NSError(domain: "io.networkservice.error",
-                                code: -999,
-                                userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("network_provider_is_nil",
-                                                                                        comment: "main Network Provider not found")])
+            let error = NSError(
+                domain: "io.networkservice.error",
+                code: -999,
+                userInfo:
+                [NSLocalizedDescriptionKey: NSLocalizedString(
+                    "network_provider_is_nil",
+                    comment: "main Network Provider not found")])
+
             delegate(NetworkResult.networkFailure(MoyaError.underlying(error, nil)), 0, nil, nil, responseType)
         }
 
     }
 
-    private func responseHandeler <T: Mappable>(_ result: Result<Moya.Response, Moya.MoyaError>, modelType: T.Type, _ responseType: NetworkResponseType, delegate: @escaping NetworkServiceResponse<T>) {
+    private func responseHandeler <T: Mappable>(
+        _ result: Result<Moya.Response, Moya.MoyaError>,
+        modelType: T.Type, _ responseType: NetworkResponseType,
+        delegate: @escaping NetworkServiceResponse<T>) {
 
         switch result {
         case let .success(response):
@@ -91,8 +107,6 @@ open class NetworkService: NSObject {
 
                 self.serverFailureHandler(modelType, response: response, delegate: delegate)
             }
-
-            break
 
         case let .failure(error):
 
@@ -104,9 +118,13 @@ open class NetworkService: NSObject {
 
     }
 
-    private func successHandler<T: Mappable> (_ modelType: T.Type, response: Moya.Response, _ type: NetworkResponseType = .object, delegate: @escaping NetworkServiceResponse<T>) {
+    private func successHandler<T: Mappable> (
+        _ modelType: T.Type,
+        response: Moya.Response,
+        _ type: NetworkResponseType = .object,
+        delegate: @escaping NetworkServiceResponse<T>) {
 
-        var json: JSON? = nil
+        var json: JSON?
         var model: Mappable!
 
         do {
@@ -139,9 +157,13 @@ open class NetworkService: NSObject {
 
     }
 
-    private func serverFailureHandler<T: Mappable> (_ modelType: T.Type, response: Moya.Response, _ type: NetworkResponseType = .object, delegate: @escaping NetworkServiceResponse<T>) {
+    private func serverFailureHandler<T: Mappable> (
+        _ modelType: T.Type,
+        response: Moya.Response,
+        _ type: NetworkResponseType = .object,
+        delegate: @escaping NetworkServiceResponse<T>) {
 
-        var json: JSON? = nil
+        var json: JSON?
 
         var serverErrors: [ErrorModel]?
         do {
@@ -152,16 +174,24 @@ open class NetworkService: NSObject {
             #if DEBUG
             print(parseError.localizedDescription)
             #endif
-
-            delegate(NetworkResult.networkFailure(MoyaError.requestMapping(parseError.localizedDescription)), response.statusCode, json, response, type)
+            delegate(NetworkResult.networkFailure(
+                MoyaError.requestMapping(parseError.localizedDescription)),
+                     response.statusCode,
+                     json,
+                     response,
+                     type)
         }
         delegate(NetworkResult.serverFailure(serverErrors), response.statusCode, json, response, type)
 
     }
 
-    private func networkFailureHandler<T: Mappable> (_ modelType: T.Type, error: MoyaError, response: Moya.Response?, _ type: NetworkResponseType = .object, delegate: @escaping NetworkServiceResponse<T>) {
+    private func networkFailureHandler<T: Mappable> (
+        _ modelType: T.Type, error: MoyaError,
+        response: Moya.Response?,
+        _ type: NetworkResponseType = .object,
+        delegate: @escaping NetworkServiceResponse<T>) {
 
-        var json: JSON? = nil
+        var json: JSON?
         do {
             if let data = response?.data {
                 json = try JSON(data: data)
@@ -170,8 +200,12 @@ open class NetworkService: NSObject {
             #if DEBUG
             print(parseError.localizedDescription)
             #endif
-
-            delegate(NetworkResult.networkFailure(MoyaError.requestMapping(parseError.localizedDescription)), response?.statusCode ?? 0, json, response, type)
+            delegate(NetworkResult.networkFailure(
+                MoyaError.requestMapping(parseError.localizedDescription)),
+                     response?.statusCode ?? 0,
+                     json,
+                     response,
+                     type)
         }
 
         delegate(NetworkResult.networkFailure(error), response?.statusCode ?? 0, json, response, type)
@@ -186,7 +220,6 @@ open class NetworkService: NSObject {
             switch argument {
             case "NetworkStack":
                 print(Thread.callStackSymbols.forEach { print($0) })
-                break
             default:
                 break
 

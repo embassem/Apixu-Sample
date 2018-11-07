@@ -1,0 +1,77 @@
+disabled_rules: # rule identifiers to exclude from running
+ - trailing_whitespace
+ - todo
+ - trailing_semicolon
+ - sorted_imports
+ - file_header
+ - control_statement
+
+excluded:
+  - Frameworks
+  - Pods
+  - Submodules
+opt_in_rules:
+  - empty_count
+  - file_header
+  - explicit_init
+  - closure_spacing
+  - overridden_super_call
+  - redundant_nil_coalescing
+  - private_outlet
+  - nimble_operator
+  - attributes
+  - operator_usage_whitespace
+  - closure_end_indentation
+  - first_where
+  - sorted_imports
+  - object_literal
+  - number_separator
+  - prohibited_super_call
+  - fatal_error_message
+  - vertical_parameter_alignment_on_call
+  - force_unwrapping
+
+
+file_name:
+  excluded:
+    - main.swift
+
+force_cast: error 
+force_try: error
+force_unwrapping: warning
+
+line_length:
+  ignores_comments: true
+  
+# they can set both implicitly with an array
+type_body_length:
+  - 400 # warning
+  - 600 # error
+# or they can set both explicitly
+
+warning_threshold: 70
+file_length:
+  warning: 1300
+  error: 1600
+
+number_separator:
+  minimum_length: 5
+
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 50
+    error: 60
+  excluded: iPhone # excluded via string
+identifier_name:
+  min_length: # only min_length
+    error: 3 # only error
+  excluded: # excluded via string array
+    - i
+    - id
+    - URL
+    - vc
+    - stb
+    - hud
+    - HUD
+    - Aya

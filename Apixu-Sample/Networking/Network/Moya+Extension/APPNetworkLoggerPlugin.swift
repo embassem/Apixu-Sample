@@ -27,7 +27,11 @@ public final class  APPNetworkLoggerPlugin: PluginType {
     public let isVerbose: Bool
     public let cURL: Bool
 
-    public init(verbose: Bool = false, cURL: Bool = false, output: ((_ separator: String, _ terminator: String, _ items: Any...) -> Void)? = nil, requestDataFormatter: ((Data) -> (String))? = nil, responseDataFormatter: ((Data) -> (Data))? = nil) {
+    public init(verbose: Bool = false,
+                cURL: Bool = false,
+                output: ((_ separator: String, _ terminator: String, _ items: Any...) -> Void)? = nil,
+                requestDataFormatter: ((Data) -> (String))? = nil,
+                responseDataFormatter: ((Data) -> (Data))? = nil) {
         self.cURL = cURL
         self.isVerbose = verbose
         self.output = output ?? APPNetworkLoggerPlugin.reversedPrint

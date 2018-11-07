@@ -8,37 +8,32 @@
 
 import UIKit
 
-
 extension AppDelegate {
-    
-    func initApp (){
+
+    func initApp () {
         initNetworking()
         initLocationService()
     }
-    
-    
+
 }
 
-// Mark: - Constance
+// MARK: - Constance
 extension AppDelegate {
-    
-    private func initNetworking (){
+
+    private func initNetworking () {
         //setting Networking base Url
         NetworkDefault.baseURL = Constant.Networking.baseUrl
         NetworkDefault.apiKey = Constant.Networking.apiKey
 
     }
-    
-    
+
 }
 
-
-// Mark: - Services
+// MARK: - Services
 extension AppDelegate {
-    
-    private func initLocationService (){
-        
+
+    private func initLocationService () {
+
     }
-    
-    
+
 }
