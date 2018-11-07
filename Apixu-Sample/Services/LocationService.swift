@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-protocol LocationServiceDelegate {
+protocol LocationServiceDelegate: class {
     func didUpdateWithLocation(location: CLLocation)
     func didFailtoUpdateLocation(error: Error)
 
@@ -31,10 +31,12 @@ class LocationService: NSObject {
         super.init()
 
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
+            locationManager.requestWhenInUseAuthorization()
+
             //locationManager.startUpdatingHeading()
         } else {
-            locationManager.requestWhenInUseAuthorization()
+            //TODO: show error to enable location service in device
+
         }
     }
 
