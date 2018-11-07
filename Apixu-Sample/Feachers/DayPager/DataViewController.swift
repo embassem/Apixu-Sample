@@ -24,7 +24,7 @@ class DataViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.dateLabel.text = forecastday?.date
-        self.tempLabel.text = "\(forecastday?.day?.mintempC  ?? 0) / \(forecastday?.day?.maxtempC  ?? 0)"
+        self.tempLabel.text = "\(forecastday?.day?.mintempC ?? 0) / \(forecastday?.day?.maxtempC ?? 0)"
         self.windlabel.text = "\(forecastday?.day?.maxwindKph ?? 0 )"
 
     }

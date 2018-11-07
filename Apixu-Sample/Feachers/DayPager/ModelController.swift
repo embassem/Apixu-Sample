@@ -23,7 +23,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     var pageData: [Forecastday] = []
 
 
-     init(data:[Forecastday]) {
+    init(data:[Forecastday]) {
         super.init()
         self.pageData = data
         // Create the data model.

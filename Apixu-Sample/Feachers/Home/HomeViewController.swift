@@ -36,7 +36,7 @@ extension HomeViewController {
         presenter?.viewDidLoad()
         weekDaysContainer.layer.cornerRadius = 8
         weekDaysContainer.layer.masksToBounds = true
-        
+
     }
 }
 
@@ -64,7 +64,7 @@ extension HomeViewController: HomeViewProtocol {
             self.windLabel.text = "\(windKph) \(dir)"
         }
         if let forcast = result.forecast?.forecastday {
-        prepareContainer(model: forcast)
+            prepareContainer(model: forcast)
         }
     }
 
@@ -81,12 +81,12 @@ extension HomeViewController {
     func prepareContainer(model: [Forecastday]) {
 
         if  weekDaysContainer.subviews.isEmpty {
-        if let child = UIStoryboard(name: "Pager", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController {
+            if let child = UIStoryboard(name: "Pager", bundle: nil).instantiateViewController(withIdentifier: "RootViewController") as? RootViewController {
 
-            child.didGetModel(model: model)
-            self.embedViewController(child, to: weekDaysContainer)
+                child.didGetModel(model: model)
+                self.embedViewController(child, to: weekDaysContainer)
 
-        }
+            }
         }
     }
 }

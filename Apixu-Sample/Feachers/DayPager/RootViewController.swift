@@ -12,9 +12,9 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
     var pageViewController: UIPageViewController?
     var forcast:[Forecastday] = []
-   
+
     @IBOutlet weak var pageControl: UIPageControl!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,7 +31,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         self.addChild(self.pageViewController!)
         self.view.addSubview(self.pageViewController!.view)
 
-       
+
         // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
         var pageViewRect = self.view.bounds
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -40,10 +40,10 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         self.pageViewController!.view.frame = pageViewRect
 
         self.pageViewController!.didMove(toParent: self)
-        
+
         configurePageControl()
     }
-    
+
     func configurePageControl() {
 
         self.pageControl.numberOfPages = forcast.count
@@ -55,7 +55,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         self.view.addSubview(pageControl)
         self.view.bringSubviewToFront(pageControl)
     }
-    
+
 
     var modelController: ModelController {
         // Return the model controller object, creating it if necessary.
@@ -78,7 +78,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = modelController.indexOfViewController(pageContentViewController as! DataViewController)
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController, spineLocationFor orientation: UIInterfaceOrientation) -> UIPageViewController.SpineLocation {
         if (orientation == .portrait) || (orientation == .portraitUpsideDown) || (UIDevice.current.userInterfaceIdiom == .phone) {
             // In portrait orientation or on iPhone: Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewController.SpineLocation.mid' in landscape orientation sets the doubleSided property to true, so set it to false here.
