@@ -14,5 +14,6 @@ target 'Apixu-Sample' do
   	pod 'SwiftyJSON'
   	pod 'Moya'
     pod 'Moya-ObjectMapper'
+    pod 'SwiftMessages'
 
 end
