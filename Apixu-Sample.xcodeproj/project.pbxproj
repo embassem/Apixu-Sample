@@ -28,6 +28,7 @@
 		184D84A621937AC100DC025A /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D84A321937AC100DC025A /* ModelController.swift */; };
 		184D84A721937AC100DC025A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D84A421937AC100DC025A /* RootViewController.swift */; };
 		184D84A921937AEA00DC025A /* Pager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184D84A821937AEA00DC025A /* Pager.storyboard */; };
+		184D84AE2193887B00DC025A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184D84AC2193887B00DC025A /* Launch Screen.storyboard */; };
 		18D2BFCA219353B400926AB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2BFC9219353B400926AB0 /* AppDelegate.swift */; };
 		18D2BFCF219353B400926AB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2BFCD219353B400926AB0 /* Main.storyboard */; };
 		18D2BFD1219353B500926AB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D2BFD0219353B500926AB0 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		184D84A321937AC100DC025A /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		184D84A421937AC100DC025A /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		184D84A821937AEA00DC025A /* Pager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager.storyboard; sourceTree = "<group>"; };
+		184D84AD2193887B00DC025A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		18D2BFC6219353B400926AB0 /* Apixu-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apixu-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D2BFC9219353B400926AB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D2BFCE219353B400926AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 		18D2C00D2193593000926AB0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				184D84AC2193887B00DC025A /* Launch Screen.storyboard */,
 				18D2BFCD219353B400926AB0 /* Main.storyboard */,
 			);
 			path = UI;
@@ -456,6 +459,7 @@
 				184D84A921937AEA00DC025A /* Pager.storyboard in Resources */,
 				18D2BFFB2193568A00926AB0 /* URLErrors.strings in Resources */,
 				18D2BFCF219353B400926AB0 /* Main.storyboard in Resources */,
+				184D84AE2193887B00DC025A /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +602,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		184D84AC2193887B00DC025A /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				184D84AD2193887B00DC025A /* Base */,
+			);
+			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
 		18D2BFCD219353B400926AB0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -730,7 +742,6 @@
 			baseConfigurationReference = 26B7EC2C86739C4F77944F89 /* Pods-Apixu-Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HW52YW266;
@@ -753,7 +764,6 @@
 			baseConfigurationReference = A38A5959EB7EE07869134973 /* Pods-Apixu-Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HW52YW266;
