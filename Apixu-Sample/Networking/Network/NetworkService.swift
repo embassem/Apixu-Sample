@@ -42,6 +42,7 @@ public enum NetworkResponseType {
     case object
     case array
     case primative
+    case root
 
 }
 
@@ -139,6 +140,9 @@ open class NetworkService: NSObject {
 
             case .primative:
                 model = try response.mapObject(GenaricType<T>.self)
+
+            case .root:
+                model = try response.mapObject(T.self)
 
                 //            default:
                 //                fatalError(" requesting to map Network response to type not implemented ")

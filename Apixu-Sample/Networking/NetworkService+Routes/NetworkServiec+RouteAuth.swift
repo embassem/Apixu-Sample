@@ -8,10 +8,12 @@
 
 extension NetworkService {
 
-    func getCountries(city: String, days: Int = 7, delegate: @escaping NetworkServiceResponse<ApixuBase> ) {
-        self.request(endPoint: APIs.forecast(city: city, days: days), modelType: ApixuBase.self, responseType: .array) { (networkResult, statusCode, json, response, responseType) in
-
-            delegate(networkResult, statusCode, json, response, responseType)
+    func getForecast(city: String, days: Int = 7, delegate: @escaping NetworkServiceResponse<ApixuBase> ) {
+        self.request(
+            endPoint: APIs.forecast(city: city, days: days),
+            modelType: ApixuBase.self,
+            responseType: .root) { (networkResult, statusCode, json, response, responseType) in
+                delegate(networkResult, statusCode, json, response, responseType)
         }
     }
 

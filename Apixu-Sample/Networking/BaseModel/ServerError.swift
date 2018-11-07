@@ -10,6 +10,8 @@ import Foundation
 import ObjectMapper
 import Moya
 
+//swiftlint:disable all
+
 open class ErrorWrapper: NSObject, Mappable {
     public var errors: [ErrorModel]?
 

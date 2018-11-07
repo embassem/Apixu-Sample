@@ -37,7 +37,7 @@ extension APIs: TargetType {
     var method: Moya.Method {
         switch self {
         case .forecast(city: _, days: _):
-            return .post
+            return .get
         }
     }
 

@@ -8,19 +8,24 @@
 import Foundation
 import ObjectMapper
 
-class ApixuBase: NSObject, NSCoding, Mappable {
+class ApixuBase: BaseModel {
 
     var current: Current?
     var forecast: Forecast?
     var location: Location?
 
-    class func newInstance(map: Map) -> Mappable? {
+    override class func newInstance(map: Map) -> Mappable? {
         return ApixuBase()
     }
-    required init?(map: Map) {}
-    private override init() {}
+    required init?(map: Map) {
+        super.init()
+    }
+    private override init() {
+        super.init()
+    }
 
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
+        super.mapping(map: map)
         current <- map["current"]
         forecast <- map["forecast"]
         location <- map["location"]
@@ -31,7 +36,9 @@ class ApixuBase: NSObject, NSCoding, Mappable {
      * NSCoding required initializer.
      * Fills the data from the passed decoder
      */
-    @objc required init(coder aDecoder: NSCoder) {
+    @objc
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         current = aDecoder.decodeObject(forKey: "current") as? Current
         forecast = aDecoder.decodeObject(forKey: "forecast") as? Forecast
         location = aDecoder.decodeObject(forKey: "location") as? Location
@@ -42,7 +49,9 @@ class ApixuBase: NSObject, NSCoding, Mappable {
      * NSCoding required method.
      * Encodes mode properties into the decoder
      */
-    @objc func encode(with aCoder: NSCoder) {
+    @objc
+    override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
         if current != nil {
             aCoder.encode(current, forKey: "current")
         }

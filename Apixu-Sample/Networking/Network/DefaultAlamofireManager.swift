@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+//swiftlint:disable all
 class DefaultAlamofireManager: Alamofire.SessionManager {
     static let sharedManager: DefaultAlamofireManager = {
         let configuration = URLSessionConfiguration.default

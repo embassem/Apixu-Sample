@@ -11,6 +11,8 @@ import Moya
 import Moya_ObjectMapper
 import Alamofire
 
+//swiftlint:disable all
+
 class APIProvider: NSObject {
 
     var provider: MoyaProvider<MultiTarget>!
